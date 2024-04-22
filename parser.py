@@ -26,9 +26,10 @@ def connectDataBase():
 
 
 def updateDatabase(doc):
-    currProf = professors.find_one({"_id": doc["name"]})
-    if (currProf):
-        professors.update_one({"_id": doc["name"]}, {"$set": doc})
+    professor = professors.find_one({"_id": doc["name"]})
+    if (professor):
+        professors.delete_one({"_id": doc["name"]})
+        professors.insert_one(doc)
     else:
         professors.insert_one(doc)
 
