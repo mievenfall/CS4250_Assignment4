@@ -98,4 +98,4 @@ def crawlerThread(frontier: deque):
 
 db = connectDataBase()
 pages = db.pages
-crawlerThread(deque(["https://www.cpp.edu/sci/computer-science/"]), pages)
+crawlerThread(deque(["https://www.cpp.edu/sci/computer-science/"]))
